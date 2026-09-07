@@ -922,7 +922,7 @@
             <ul class="meta-list">
               <li>
                 <span class="meta-key"><i class="fa-regular fa-calendar"></i> 일시</span>
-                <span class="meta-val">9월 14일(월) ~ 9월 16일(수)</span>
+                <span class="meta-val">9월 28일(월) ~ 9월 29일(화)</span>
               </li>
               <li>
                 <span class="meta-key"><i class="fa-solid fa-location-dot"></i> 장소</span>
@@ -937,7 +937,7 @@
             <!-- 경품 안내 아코디언 -->
             <details class="prize-accordion">
               <summary class="prize-summary">
-                <span><i class="fa-solid fa-gift" style="color: #E67E22; margin-right: 4px;"></i> 🎁 탐방 완료 경품 추첨 안내</span>
+                <span><i class="fa-solid fa-gift" style="color: #E67E22; margin-right: 4px;"></i> 🎁 탐방 완료 시 경품 안내</span>
                 <i class="fa-solid fa-chevron-down arrow-icon"></i>
               </summary>
               <div class="prize-content">
@@ -1037,13 +1037,13 @@
        ========================================================= */
     const ZONES = [
       { id: 1, name: "일반 단행본", code: "318" },
-      { id: 2, name: "교양도서\n(한국소설)", code: "724" },
+      { id: 2, name: "교양도서", code: "724" },
       { id: 3, name: "연구보고서", code: "519" },
       { id: 4, name: "KLI\n연구보고서", code: "862" },
       { id: 5, name: "통계연감", code: "107" },
-      { id: 6, name: "협업 및\n인터뷰존", code: "493" },
+      { id: 6, name: "인터뷰존", code: "493" },
       { id: 7, name: "큐레이션존", code: "631" },
-      { id: 8, name: "1인 포커스석", code: "955" },
+      { id: 8, name: "1인 집중석", code: "955" },
       { id: 9, name: "창의사색석", code: "240" }
     ];
 
@@ -1186,7 +1186,7 @@
         if (visitedZones.length === ZONES.length) {
           showToast('🎉 축하합니다! 9개 구역을 모두 탐방하셨습니다. 사서에게 확인을 받아보세요!');
         } else {
-          showToast(`🎯 정답입니다! [${currentSelectedZone.name.replace('\n', ' ')}]에 GOOD 도장이 찍혔습니다.`);
+          showToast(`🎯 확인도장 쾅! [${currentSelectedZone.name.replace('\n', ' ')}]에 GOOD 도장이 찍혔습니다.`);
         }
       } else {
         // 오답 처리
