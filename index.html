@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국노동연구원 도서관 | 9월 독서의 달 & 재개관 안내</title>
+
+  <!-- Noto Sans KR 폰트 및 Font Awesome 아이콘 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      /* 밝은 배경 시스템 */
+      --bg-page: #F5F7FA;
+      --bg-card: #FFFFFF;
+      --bg-subtle-green: #EDF7F2;
+      --bg-subtle-navy: #EEF4FA;
+
+      /* 딥그린 & 딥네이비 색상 체계 */
+      --navy-main: #0B2238;
+      --navy-sub: #1A3D60;
+      --green-main: #0E4030;
+      --green-accent: #17654E;
+      --green-bright: #2B8A68;
+      --green-mint: #38D9A9;
+
+      /* 도장(스탬프) 컬러 */
+      --stamp-color: #E03131; /* 레트로 레드 도장 컬러 */
+      --stamp-green: #087F5B; /* 그린 도장 컬러 옵션 */
+
+      /* 텍스트 & 테두리 */
+      --text-dark: #1E293B;
+      --text-muted: #5A6D80;
+      --border-color: #E2E8F0;
+      --border-green: #B7DFCD;
+      --border-navy: #BDD4E7;
+
+      --shadow-sm: 0 4px 12px rgba(11, 34, 56, 0.05);
+      --shadow-md: 0 8px 24px rgba(14, 64, 48, 0.08);
+      --shadow-lg: 0 16px 36px rgba(11, 34, 56, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      word-break: keep-all;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+      min-height: 100vh;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* =========================================================
+       1. 상단 히어로 섹션
+       ========================================================= */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      background-color: #0B2238;
+      padding: 60px 24px 50px;
+      border-bottom: 1px solid var(--border-color);
+      color: #FFFFFF;
+    }
+
+    .hero-bg-layer {
+      position: absolute;
+      inset: -20px;
+      /* 고화질 도서관 인테리어 기본 배경 */
+      background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center 45%;
+      filter: blur(6px) brightness(0.42);
+      transform: scale(1.08);
+      transition: background-image 0.4s ease;
+      z-index: 0;
+    }
+
+    .hero-overlay-layer {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(11, 34, 56, 0.4) 0%, rgba(11, 34, 56, 0.88) 100%),
+        linear-gradient(180deg, rgba(14, 64, 48, 0.35) 0%, rgba(11, 34, 56, 0.75) 100%);
+      z-index: 1;
+    }
+
+    .btn-change-bg {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-change-bg:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .org-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255, 255, 255, 0.45);
+      color: #FFFFFF;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .org-badge i {
+      color: var(--green-mint);
+    }
+
+    .main-title {
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.35;
+      margin-bottom: 14px;
+      text-shadow: 0 3px 14px rgba(0, 0, 0, 0.7);
+      letter-spacing: -0.5px;
+    }
+
+    .main-title span {
+      color: var(--green-mint);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 24px;
+      font-weight: 400;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+    }
+
+    .welcome-banner {
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+      max-width: 680px;
+      margin: 0 auto;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    }
+
+    .welcome-icon {
+      font-size: 2rem;
+      color: var(--green-mint);
+      flex-shrink: 0;
+    }
+
+    .welcome-text h4 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 3px;
+    }
+
+    .welcome-text p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.45;
+    }
+
+    /* =========================================================
+       2. 본문 컨텐츠 영역 (카드 그리드)
+       ========================================================= */
+    .content-area {
+      padding: 36px 24px;
+      flex: 1;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--navy-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title i {
+      color: var(--green-main);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .event-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 24px 20px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .event-card.theme-green {
+      border-top: 4px solid var(--green-main);
+    }
+
+    .event-card.theme-navy {
+      border-top: 4px solid var(--navy-main);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .badge-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--bg-subtle-green);
+      color: var(--green-main);
+      border: 1px solid var(--border-green);
+    }
+
+    .badge-tag.navy-tag {
+      background: var(--bg-subtle-navy);
+      color: var(--navy-main);
+      border: 1px solid var(--border-navy);
+    }
+
+    .event-title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--navy-main);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .event-desc {
+      background: #F8FAFC;
+      border: 1px solid #EDF2F7;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .meta-list {
+      list-style: none;
+      font-size: 0.86rem;
+      margin-bottom: 16px;
+    }
+
+    .meta-list li {
+      display: flex;
+      margin-bottom: 8px;
+      align-items: baseline;
+    }
+
+    .meta-key {
+      width: 55px;
+      flex-shrink: 0;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-key i {
+      color: var(--navy-sub);
+    }
+
+    .meta-val {
+      color: var(--navy-main);
+      font-weight: 600;
+    }
+
+    .meta-val.highlight-green {
+      color: var(--green-main);
+      font-weight: 700;
+    }
+
+    /* 버튼 공통 */
+    .btn-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 48px;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.94rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      margin-top: auto;
+    }
+
+    .btn-naver {
+      background-color: #03C75A;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(3, 199, 90, 0.25);
+    }
+    .btn-naver:hover { background-color: #02a34a; }
+
+    .btn-library-link {
+      background-color: var(--bg-subtle-navy);
+      color: var(--navy-main);
+      border: 1.5px solid var(--border-navy);
+    }
+    .btn-library-link:hover { background-color: #DEE9F5; }
+
+    /* =========================================================
+       3. 9개 구역 스탬프 보드 & 'GOOD' 도장 스타일
+       ========================================================= */
+    .stamp-board {
+      background: #F8FAFC;
+      border: 1.5px solid var(--border-color);
+      border-radius: 14px;
+      padding: 14px 12px;
+      margin-bottom: 16px;
+    }
+
+    .stamp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .stamp-header h5 {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--navy-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stamp-count-badge {
+      background-color: var(--green-main);
+      color: #FFFFFF;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+    }
+
+    .stamp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    /* 각 스탬프 칸 */
+    .stamp-item {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 10px 4px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 76px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .stamp-item:hover:not(.completed) {
+      border-color: var(--green-bright);
+      background-color: #F0FDF4;
+      transform: translateY(-2px);
+    }
+
+    .stamp-item .zone-name {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--navy-main);
+      line-height: 1.25;
+      margin-bottom: 4px;
+      z-index: 1;
+    }
+
+    .stamp-item .click-hint {
+      font-size: 0.65rem;
+      color: #64748B;
+      font-weight: 500;
+      background: #EDF2F7;
+      padding: 2px 6px;
+      border-radius: 4px;
+      z-index: 1;
+    }
+
+    /* 완료된 구역 스타일 */
+    .stamp-item.completed {
+      background: #FAFDFB;
+      border-color: #A7F3D0;
+      cursor: default;
+    }
+
+    .stamp-item.completed .zone-name {
+      color: #064E3B;
+      opacity: 0.55;
+    }
+
+    .stamp-item.completed .click-hint {
+      display: none;
+    }
+
+    /* 🔥 리얼한 'GOOD' 도장 (Stamp) 그래픽 */
+    .good-stamp {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-14deg) scale(0.95);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      color: var(--stamp-color);
+      border: 2px solid var(--stamp-color);
+      border-radius: 6px;
+      padding: 2px 7px;
+      text-transform: uppercase;
+      background: rgba(254, 242, 242, 0.85);
+      box-shadow: 0 0 0 1px rgba(224, 49, 49, 0.2);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .stamp-item.completed .good-stamp {
+      display: block;
+    }
+
+    /* 스탬프 찍힐 때의 탄력 애니메이션 */
+    .stamp-item.just-stamped .good-stamp {
+      animation: stampImpact 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes stampImpact {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(0deg) scale(2.6);
+      }
+      70% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(-16deg) scale(0.88);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(-14deg) scale(0.95);
+      }
+    }
+
+    /* 완료 배너 */
+    .completion-banner {
+      display: none;
+      background: linear-gradient(135deg, #FFF9EB 0%, #FEF3D6 100%);
+      border: 1.5px solid #F6D884;
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 12px;
+      text-align: center;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .completion-banner.show { display: block; }
+
+    .completion-banner h6 {
+      color: #9A6700;
+      font-size: 0.92rem;
+      font-weight: 800;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .completion-banner p {
+      font-size: 0.8rem;
+      color: #6B4701;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .completion-banner .completed-time {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 0.72rem;
+      color: #8C5E00;
+      background: rgba(255, 255, 255, 0.75);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(246, 216, 132, 0.8);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 경품 아코디언 */
+    .prize-accordion {
+      margin-bottom: 14px;
+      border: 1.5px solid var(--border-green);
+      border-radius: 10px;
+      background-color: var(--bg-subtle-green);
+      overflow: hidden;
+    }
+
+    .prize-summary {
+      padding: 10px 14px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--green-main);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+    }
+
+    .prize-summary::-webkit-details-marker { display: none; }
+
+    .prize-summary .arrow-icon {
+      font-size: 0.8rem;
+      color: var(--green-main);
+      transition: transform 0.2s ease;
+    }
+
+    .prize-accordion[open] .prize-summary .arrow-icon {
+      transform: rotate(180deg);
+    }
+
+    .prize-content {
+      padding: 0 14px 10px;
+      background-color: #FFFFFF;
+      border-top: 1px solid var(--border-green);
+    }
+
+    .prize-list {
+      list-style: none;
+      padding-top: 6px;
+    }
+
+    .prize-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border-bottom: 1px dashed var(--border-color);
+      font-size: 0.8rem;
+    }
+
+    .prize-list li:last-child { border-bottom: none; }
+    .prize-rank { font-weight: 700; color: var(--navy-main); }
+    .prize-name { font-weight: 600; color: var(--green-main); }
+
+    /* 리모델링 요약 섹션 */
+    .remodel-section {
+      margin-top: 36px;
+      background: linear-gradient(145deg, var(--bg-subtle-green) 0%, #FFFFFF 100%);
+      border: 1.5px dashed var(--border-green);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .remodel-section h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-main);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .remodel-section p {
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       4. 인증번호 입력 팝업 모달
+       ========================================================= */
+    .input-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 34, 56, 0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .input-modal.active { display: flex; }
+
+    .input-box {
+      width: 100%;
+      max-width: 340px;
+      background: #FFFFFF;
+      border-radius: 18px;
+      padding: 24px 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      animation: modalPop 0.25s ease;
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-zone-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green-main);
+      background: var(--bg-subtle-green);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .input-box h4 {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--navy-main);
+      margin-bottom: 6px;
+    }
+
+    .input-box p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .code-input-field {
+      width: 100%;
+      height: 52px;
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 8px;
+      border: 2px solid var(--border-color);
+      border-radius: 10px;
+      outline: none;
+      color: var(--navy-main);
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+    }
+
+    .code-input-field:focus {
+      border-color: var(--green-bright);
+      box-shadow: 0 0 0 3px rgba(43, 138, 104, 0.15);
+    }
+
+    .modal-btn-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-modal {
+      flex: 1;
+      height: 44px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-modal-cancel {
+      background: #E2E8F0;
+      color: var(--text-dark);
+    }
+
+    .btn-modal-submit {
+      background: var(--green-main);
+      color: #FFFFFF;
+    }
+
+    .btn-modal:hover { opacity: 0.9; }
+
+    /* 흔들림 효과 (오답 시) */
+    .shake {
+      animation: shake 0.35s ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+
+    /* 토스트 메시지 */
+    .toast-msg {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--navy-main);
+      color: #FFFFFF;
+      border: 1.5px solid var(--green-bright);
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 3000;
+      opacity: 0;
+      transition: all 0.3s ease;
+      width: calc(100% - 40px);
+      max-width: 440px;
+      justify-content: center;
+    }
+
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* 푸터 */
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background-color: #FAFCFE;
+      margin-top: auto;
+    }
+
+    .footer strong { color: var(--navy-main); font-size: 0.88rem; }
+    .footer p { margin-top: 6px; }
+
+    .test-reset-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.72rem;
+      color: #94A3B8;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* 미디어 쿼리 */
+    @media (min-width: 768px) {
+      .hero-section { padding: 75px 36px 65px; }
+      .main-title { font-size: 2.3rem; }
+      .hero-subtitle { font-size: 1.05rem; }
+      .content-area { padding: 42px 36px; }
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-section { padding: 90px 48px 80px; }
+      .main-title { font-size: 2.6rem; }
+      .content-area { padding: 48px 48px; }
+      .cards-grid { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container" id="main-app">
+
+    <!-- 1. 상단 히어로 섹션 -->
+    <header class="hero-section" id="hero-drop-zone">
+      <div class="hero-bg-layer" id="hero-bg"></div>
+      <div class="hero-overlay-layer"></div>
+
+      <label for="hero-img-input" class="btn-change-bg" title="배경 사진 변경">
+        <i class="fa-solid fa-camera"></i> 배경 사진 변경
+      </label>
+      <input type="file" id="hero-img-input" accept="image/*" style="display: none;" onchange="handleHeroImgUpload(event)">
+
+      <div class="hero-inner">
+        <div class="org-badge">
+          <i class="fa-solid fa-bookmark"></i> 한국노동연구원 도서관
+        </div>
+
+        <h1 class="main-title">
+          9월 독서의 달<br>
+          <span>새로워진 도서관</span>으로 초대합니다
+        </h1>
+
+        <p class="hero-subtitle">
+          쾌적한 연구와 사색의 공간으로 재단장한 KLI 도서관을 만나보세요.
+        </p>
+
+        <div class="welcome-banner">
+          <div class="welcome-icon">
+            <i class="fa-solid fa-people-roof"></i>
+          </div>
+          <div class="welcome-text">
+            <h4>원내 구성원 누구나 환영합니다!</h4>
+            <p>연구직·행정직 임직원 여러분 모두 부담 없이 방문하셔서 준비된 행사를 함께 즐겨주세요.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. 본문 행사 프로그램 섹션 -->
+    <main class="content-area">
+      <div class="section-header">
+        <h3 class="section-title">
+          <i class="fa-solid fa-calendar-check"></i> 9월 독서의 달 & 재개관 기념 이벤트 안내
+        </h3>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- 프로그램 3: NEW KLI 도서관, 너는 누구니? (3자리 번호 인증 스탬프 투어) -->
+        <article class="event-card theme-green">
+          <div>
+            <div class="card-top">
+              <span class="badge-tag"><i class="fa-solid fa-stamp"></i> 9개 구역 탐방</span>
+              <span style="color: var(--green-main); font-size: 0.82rem; font-weight: 700;">3일간 진행</span>
+            </div>
+            <h2 class="event-title">🔍 NEW KLI 도서관, 너는 누구니?</h2>
+            <p class="event-desc">
+              아래 구역을 터치하고 현장에 부착된 <strong>인증번호 3자리</strong>를 입력하면 'GOOD' 도장이 찍힙니다!
+            </p>
+
+            <ul class="meta-list">
+              <li>
+                <span class="meta-key"><i class="fa-regular fa-calendar"></i> 일시</span>
+                <span class="meta-val">9월 14일(월) ~ 9월 16일(수)</span>
+              </li>
+              <li>
+                <span class="meta-key"><i class="fa-solid fa-location-dot"></i> 장소</span>
+                <span class="meta-val">6층 도서관 전 구역</span>
+              </li>
+              <li>
+                <span class="meta-key"><i class="fa-solid fa-gift"></i> 수령</span>
+                <span class="meta-val highlight-green">9개 도장 완료 후 사서 확인</span>
+              </li>
+            </ul>
+
+            <!-- 경품 안내 아코디언 -->
+            <details class="prize-accordion">
+              <summary class="prize-summary">
+                <span><i class="fa-solid fa-gift" style="color: #E67E22; margin-right: 4px;"></i> 🎁 탐방 완료 경품 추첨 안내</span>
+                <i class="fa-solid fa-chevron-down arrow-icon"></i>
+              </summary>
+              <div class="prize-content">
+                <ul class="prize-list">
+                  <li>
+                    <span class="prize-rank">🥇 1등</span>
+                    <span><strong class="prize-name">문화상품권 5만원</strong> (2명)</span>
+                  </li>
+                  <li>
+                    <span class="prize-rank">🥈 2등</span>
+                    <span><strong class="prize-name">교양도서 1권</strong> (5명)</span>
+                  </li>
+                  <li>
+                    <span class="prize-rank">🥉 3등</span>
+                    <span><strong class="prize-name">북클립 1개</strong> (10명)</span>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <!-- 9개 구역 스탬프 판 -->
+            <div class="stamp-board">
+              <div class="stamp-header">
+                <h5><i class="fa-solid fa-map-location-dot" style="color: var(--green-main);"></i> 9개 구역 도장판 (터치하여 인증)</h5>
+                <span class="stamp-count-badge" id="stamp-count">0 / 9 완료</span>
+              </div>
+
+              <div class="stamp-grid" id="stamp-grid">
+                <!-- 자바스크립트로 9개 구역 렌더링 -->
+              </div>
+
+              <!-- 9개 완료 배너 -->
+              <div id="completion-banner" class="completion-banner">
+                <h6>🎉 9개 구역 탐방 완료!</h6>
+                <p>사서에게 이 화면을 보여주시고 경품 추첨에 참여하세요!</p>
+                <div class="completed-time" id="completed-time-tag"></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 10px;">
+            <span class="test-reset-link" onclick="resetZones()">[초기화] 스탬프 기록 지우기</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- 3. 공간 리모델링 요약 섹션 -->
+      <section class="remodel-section">
+        <h4><i class="fa-solid fa-wand-magic-sparkles"></i> 활발한 정책 연구 소통과 쾌적한 휴식의 공간, KLI 도서관 리모델링 안내</h4>
+        <p>집중 연구를 위한 1인 포커스석, 창의적 영감을 주는 창의사색석 등 프라이빗한 몰입 공간과 연구 협업 및 인터뷰 존이 새롭게 조성되었습니다. 원내 구성원 여러분의 많은 이용과 방문을 바랍니다. <strong>연구 협업 공간(회의실) 이용 안내는 별도 공지를 참고</strong>하여 주시기 바랍니다.</p>
+      </section>
+    </main>
+
+    <!-- 4. 숫자 3자리 인증번호 입력 모달 (팝업) -->
+    <div id="input-modal" class="input-modal" role="dialog" aria-modal="true">
+      <div class="input-box" id="modal-box">
+        <span class="modal-zone-tag" id="modal-zone-tag">구역 인증</span>
+        <h4 id="modal-zone-title">일반 단행본</h4>
+        <p>현장에 적힌 <strong>숫자 3자리</strong>를 입력해 주세요.</p>
+
+        <input type="text"
+               id="code-input"
+               class="code-input-field"
+               inputmode="numeric"
+               pattern="[0-9]*"
+               maxlength="3"
+               placeholder="000"
+               autocomplete="off">
+
+        <div class="modal-btn-group">
+          <button type="button" class="btn-modal btn-modal-cancel" onclick="closeInputModal()">취소</button>
+          <button type="button" class="btn-modal btn-modal-submit" onclick="submitCode()">인증하기</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 토스트 알림창 -->
+    <div id="toast" class="toast-msg">
+      <i class="fa-solid fa-circle-check" style="color: #4EBA88; font-size: 1.15rem; flex-shrink: 0;"></i>
+      <span id="toast-text">인증되었습니다.</span>
+    </div>
+
+    <!-- 5. 푸터 -->
+    <footer class="footer">
+      <strong>한국노동연구원 도서관</strong>
+      <p>행사 관련 문의 : 044-287-6072 | lib@kli.re.kr</p>
+      <p style="margin-top: 8px; font-size: 0.74rem; opacity: 0.65;">© Korea Labor Institute Library. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <!-- 자바스크립트 -->
+  <script>
+    /* =========================================================
+       구역 정의 및 고유 3자리 인증번호 설정 (필요시 번호 변경 가능)
+       ========================================================= */
+    const ZONES = [
+      { id: 1, name: "일반 단행본", code: "318" },
+      { id: 2, name: "교양도서\n(한국소설)", code: "724" },
+      { id: 3, name: "연구보고서", code: "519" },
+      { id: 4, name: "KLI\n연구보고서", code: "862" },
+      { id: 5, name: "통계연감", code: "107" },
+      { id: 6, name: "협업 및\n인터뷰존", code: "493" },
+      { id: 7, name: "큐레이션존", code: "631" },
+      { id: 8, name: "1인 포커스석", code: "955" },
+      { id: 9, name: "창의사색석", code: "240" }
+    ];
+
+    const STORAGE_KEY = 'kli_library_visited_zones_v5';
+    const COMPLETION_TIME_KEY = 'kli_library_completion_time_v5';
+    const HERO_IMAGE_KEY = 'kli_library_custom_hero_img_v2';
+
+    let visitedZones = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    let currentSelectedZone = null;
+    let justStampedZoneId = null;
+    let toastTimer = null;
+
+    // 배경 이미지 로드 및 변경 로직
+    function applyHeroBackground(file) {
+      if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const base64Data = e.target.result;
+          document.getElementById('hero-bg').style.backgroundImage = `url('${base64Data}')`;
+          try {
+            localStorage.setItem(HERO_IMAGE_KEY, base64Data);
+          } catch(err) {
+            console.warn('저장소 용량 한계로 세션에만 반영되었습니다.');
+          }
+          showToast('📸 배경 이미지가 성공적으로 변경되었습니다.');
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function handleHeroImgUpload(event) {
+      if (event.target.files && event.target.files[0]) {
+        applyHeroBackground(event.target.files[0]);
+      }
+    }
+
+    // 토스트 알림창
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.innerText = msg;
+      toast.classList.add('show');
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // 9개 구역 스탬프 그리드 렌더링
+    function renderStampGrid() {
+      const grid = document.getElementById('stamp-grid');
+      grid.innerHTML = '';
+
+      ZONES.forEach(zone => {
+        const isVisited = visitedZones.includes(zone.id);
+        const isJustStamped = justStampedZoneId === zone.id;
+
+        const item = document.createElement('div');
+        item.className = `stamp-item ${isVisited ? 'completed' : ''} ${isJustStamped ? 'just-stamped' : ''}`;
+
+        item.onclick = () => onZoneClick(zone);
+
+        item.innerHTML = `
+          <div class="zone-name">${zone.name.replace('\n', '<br>')}</div>
+          ${!isVisited ? '<div class="click-hint">번호 입력</div>' : ''}
+          <div class="good-stamp">GOOD</div>
+        `;
+        grid.appendChild(item);
+      });
+
+      // 도장 효과 후 클래스 플래그 초기화
+      if (justStampedZoneId) {
+        setTimeout(() => { justStampedZoneId = null; }, 500);
+      }
+
+      document.getElementById('stamp-count').innerText = `${visitedZones.length} / ${ZONES.length} 완료`;
+
+      const completionBanner = document.getElementById('completion-banner');
+      const timeTag = document.getElementById('completed-time-tag');
+
+      if (visitedZones.length === ZONES.length) {
+        let completionTime = localStorage.getItem(COMPLETION_TIME_KEY);
+        if (!completionTime) {
+          const now = new Date();
+          completionTime = `${now.getMonth()+1}월 ${now.getDate()}일 ${now.getHours()}시 ${String(now.getMinutes()).padStart(2, '0')}분 인증 완료`;
+          localStorage.setItem(COMPLETION_TIME_KEY, completionTime);
+        }
+        timeTag.innerText = `사서 확인용 : ${completionTime}`;
+        completionBanner.classList.add('show');
+      } else {
+        completionBanner.classList.remove('show');
+        localStorage.removeItem(COMPLETION_TIME_KEY);
+      }
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(visitedZones));
+    }
+
+    // 구역 카드 클릭 시
+    function onZoneClick(zone) {
+      if (visitedZones.includes(zone.id)) {
+        showToast(`✅ [${zone.name.replace('\n', ' ')}]은 이미 GOOD 도장을 받은 구역입니다.`);
+        return;
+      }
+
+      currentSelectedZone = zone;
+      document.getElementById('modal-zone-tag').innerText = `구역 ${zone.id}`;
+      document.getElementById('modal-zone-title').innerText = zone.name.replace('\n', ' ');
+
+      const inputField = document.getElementById('code-input');
+      inputField.value = '';
+
+      const modal = document.getElementById('input-modal');
+      modal.classList.add('active');
+
+      setTimeout(() => inputField.focus(), 150);
+    }
+
+    function closeInputModal() {
+      document.getElementById('input-modal').classList.remove('active');
+      currentSelectedZone = null;
+    }
+
+    // 인증번호 검증 및 도장 처리
+    function submitCode() {
+      if (!currentSelectedZone) return;
+
+      const inputField = document.getElementById('code-input');
+      const enteredCode = inputField.value.trim();
+      const modalBox = document.getElementById('modal-box');
+
+      if (enteredCode === currentSelectedZone.code) {
+        // 정답!
+        visitedZones.push(currentSelectedZone.id);
+        justStampedZoneId = currentSelectedZone.id;
+
+        closeInputModal();
+        renderStampGrid();
+
+        if (visitedZones.length === ZONES.length) {
+          showToast('🎉 축하합니다! 9개 구역을 모두 탐방하셨습니다. 사서에게 확인을 받아보세요!');
+        } else {
+          showToast(`🎯 정답입니다! [${currentSelectedZone.name.replace('\n', ' ')}]에 GOOD 도장이 찍혔습니다.`);
+        }
+      } else {
+        // 오답 처리
+        modalBox.classList.add('shake');
+        setTimeout(() => modalBox.classList.remove('shake'), 400);
+        showToast('❌ 인증번호 3자리가 올바르지 않습니다. 다시 확인해 주세요.');
+        inputField.value = '';
+        inputField.focus();
+      }
+    }
+
+    // 엔터키 입력 처리
+    document.getElementById('code-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        submitCode();
+      }
+    });
+
+    // 모달 배경 클릭 및 ESC 키 처리
+    document.getElementById('input-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeInputModal();
+    });
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeInputModal();
+    });
+
+    // 스탬프 기록 초기화
+    function resetZones() {
+      if (confirm('스탬프 탐방 기록을 모두 초기화하시겠습니까?')) {
+        visitedZones = [];
+        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(COMPLETION_TIME_KEY);
+        renderStampGrid();
+        showToast('스탬프 도장판이 초기화되었습니다.');
+      }
+    }
+
+    // 페이지 초기 로드
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedImg = localStorage.getItem(HERO_IMAGE_KEY);
+      if (savedImg) {
+        document.getElementById('hero-bg').style.backgroundImage = `url('${savedImg}')`;
+      }
+      renderStampGrid();
+    });
+  </script>
+</body>
+</html>
