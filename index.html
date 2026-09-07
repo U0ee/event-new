@@ -828,15 +828,6 @@
     .footer strong { color: var(--navy-main); font-size: 0.88rem; }
     .footer p { margin-top: 6px; }
 
-    .test-reset-link {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 0.72rem;
-      color: #94A3B8;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
     /* 미디어 쿼리 */
     @media (min-width: 768px) {
       .hero-section { padding: 75px 36px 65px; }
@@ -912,7 +903,7 @@
           <div>
             <div class="card-top">
               <span class="badge-tag"><i class="fa-solid fa-stamp"></i> 9개 구역 탐방</span>
-              <span style="color: var(--green-main); font-size: 0.82rem; font-weight: 700;">3일간 진행</span>
+              <span style="color: var(--green-main); font-size: 0.82rem; font-weight: 700;">2일간 진행</span>
             </div>
             <h2 class="event-title">🔍 NEW KLI 도서관, 너는 누구니?</h2>
             <p class="event-desc">
@@ -922,7 +913,7 @@
             <ul class="meta-list">
               <li>
                 <span class="meta-key"><i class="fa-regular fa-calendar"></i> 일시</span>
-                <span class="meta-val">9월 14일(월) ~ 9월 16일(수)</span>
+                <span class="meta-val">9월 28일(월) ~ 9월 29일(화)</span>
               </li>
               <li>
                 <span class="meta-key"><i class="fa-solid fa-location-dot"></i> 장소</span>
@@ -937,22 +928,14 @@
             <!-- 경품 안내 아코디언 -->
             <details class="prize-accordion">
               <summary class="prize-summary">
-                <span><i class="fa-solid fa-gift" style="color: #E67E22; margin-right: 4px;"></i> 🎁 탐방 완료 경품 추첨 안내</span>
+                <span><i class="fa-solid fa-gift" style="color: #E67E22; margin-right: 4px;"></i> 🎁 탐방 완료 상품 안내</span>
                 <i class="fa-solid fa-chevron-down arrow-icon"></i>
               </summary>
               <div class="prize-content">
                 <ul class="prize-list">
                   <li>
-                    <span class="prize-rank">🥇 1등</span>
-                    <span><strong class="prize-name">문화상품권 5만원</strong> (2명)</span>
-                  </li>
-                  <li>
-                    <span class="prize-rank">🥈 2등</span>
-                    <span><strong class="prize-name">교양도서 1권</strong> (5명)</span>
-                  </li>
-                  <li>
-                    <span class="prize-rank">🥉 3등</span>
-                    <span><strong class="prize-name">북클립 1개</strong> (10명)</span>
+                    <span class="prize-rank">🎁 상품</span>
+                    <span><strong class="prize-name">재개관 기념 커스텀 클리커</strong> (선착순 60명)</span>
                   </li>
                 </ul>
               </div>
@@ -978,9 +961,6 @@
             </div>
           </div>
 
-          <div style="text-align: center; margin-top: 10px;">
-            <span class="test-reset-link" onclick="resetZones()">[초기화] 스탬프 기록 지우기</span>
-          </div>
         </article>
 
       </div>
@@ -1025,7 +1005,7 @@
     <footer class="footer">
       <strong>한국노동연구원 도서관</strong>
       <p>행사 관련 문의 : 044-287-6072 | lib@kli.re.kr</p>
-      <p style="margin-top: 8px; font-size: 0.74rem; opacity: 0.65;">© Korea Labor Institute Library. All rights reserved.</p>
+      <p style="margin-top: 8px; font-size: 0.74rem; opacity: 0.65;" id="admin-trigger" onclick="handleAdminTrigger()">© Korea Labor Institute Library. All rights reserved.</p>
     </footer>
 
   </div>
@@ -1051,10 +1031,17 @@
     const COMPLETION_TIME_KEY = 'kli_library_completion_time_v5';
     const HERO_IMAGE_KEY = 'kli_library_custom_hero_img_v2';
 
+    // 관리자 전용 초기화 비밀번호 (필요시 이 값만 변경하세요)
+    const ADMIN_RESET_PASSWORD = 'kli9072';
+    const ADMIN_TRIGGER_CLICKS = 5;
+    const ADMIN_TRIGGER_WINDOW_MS = 3000;
+
     let visitedZones = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
     let currentSelectedZone = null;
     let justStampedZoneId = null;
     let toastTimer = null;
+    let adminClickCount = 0;
+    let adminClickTimer = null;
 
     // 배경 이미지 로드 및 변경 로직
     function applyHeroBackground(file) {
@@ -1214,7 +1201,7 @@
       if (e.key === 'Escape') closeInputModal();
     });
 
-    // 스탬프 기록 초기화
+    // 스탬프 기록 초기화 (관리자 전용)
     function resetZones() {
       if (confirm('스탬프 탐방 기록을 모두 초기화하시겠습니까?')) {
         visitedZones = [];
@@ -1222,6 +1209,31 @@
         localStorage.removeItem(COMPLETION_TIME_KEY);
         renderStampGrid();
         showToast('스탬프 도장판이 초기화되었습니다.');
+      }
+    }
+
+    // 관리자 진입: 푸터 저작권 문구를 짧은 시간 안에 5번 클릭하면
+    // 비밀번호 입력창이 뜨고, 맞으면 초기화가 실행됩니다.
+    function handleAdminTrigger() {
+      adminClickCount += 1;
+
+      if (adminClickTimer) clearTimeout(adminClickTimer);
+      adminClickTimer = setTimeout(() => {
+        adminClickCount = 0;
+      }, ADMIN_TRIGGER_WINDOW_MS);
+
+      if (adminClickCount >= ADMIN_TRIGGER_CLICKS) {
+        adminClickCount = 0;
+        clearTimeout(adminClickTimer);
+
+        const inputPassword = prompt('관리자 비밀번호를 입력하세요.');
+        if (inputPassword === null) return;
+
+        if (inputPassword === ADMIN_RESET_PASSWORD) {
+          resetZones();
+        } else {
+          showToast('❌ 비밀번호가 올바르지 않습니다.');
+        }
       }
     }
 
