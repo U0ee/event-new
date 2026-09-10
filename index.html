@@ -201,6 +201,7 @@
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 0;
   }
   .event-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
   .event-card.theme-green { border-top: 4px solid var(--green-main); }
@@ -403,7 +404,7 @@
   .log-count { font-size: 0.82rem; color: var(--text-muted); }
   .log-count b { color: var(--navy-main); }
 
-  .log-table-wrap { max-height: 220px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 8px; }
+  .log-table-wrap { max-height: 220px; overflow-y: auto; overflow-x: auto; border: 1px solid var(--border-color); border-radius: 8px; }
   table.log-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
   table.log-table th, table.log-table td { border-bottom: 1px solid var(--border-color); padding: 6px 8px; text-align: left; white-space: nowrap; }
   table.log-table th { background: #F1F5F9; position: sticky; top: 0; color: var(--navy-main); }
